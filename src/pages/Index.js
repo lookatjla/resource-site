@@ -26,4 +26,4 @@ function Index(props) {
         </div>    
     )
 }
-export default Index;            
+export default Index;        

@@ -30,7 +30,7 @@ export async function updateAction({ request, params }) {
   const updatedPost = {
     image: formData.get("image"),
     title: formData.get("title"),
-    body: formData.get("body"),
+    body: formData.get("body")
   };
 
   await fetch(url + params.id + "/", {

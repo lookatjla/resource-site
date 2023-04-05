@@ -14,11 +14,11 @@ const Show = (props) => {
         <input type="input" name="image" placeholder="Food Image" />
         <input type="input" name="title" placeholder="Restaurant Name" />
         <input type="input" name="body" placeholder="Your Review" />
-        <input type="submit" value={"Update"} />
+        <button>Update</button>
       </Form>
 
       <Form action={`/delete/${post._id}`} method="post">
-        <input type="submit" value={"Delete"} />
+        <button>Delete Review</button>
       </Form>
     </div>
     )
