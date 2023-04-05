@@ -3,7 +3,7 @@ import {createBrowserRouter, createRoutesFromElements, Route} from "react-router
   import Index from "./pages/Index"
   import Show from "./pages/Show"
 import { IndexLoader, ShowLoader } from "./loaders";
-import { createAction } from "./actions";
+import { createAction, updateAction, deleteAction } from "./actions";
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -11,8 +11,8 @@ import { createAction } from "./actions";
         <Route path="/posts" element={<Index />} loader={IndexLoader}/>
         <Route path="/:id" element={<Show />} loader={ShowLoader}/>
         <Route path="create" action={createAction}/>
-        <Route path="update/:id" />
-        <Route path="delete/:id" />
+        <Route path="update/:id" action={updateAction} />
+        <Route path="delete/:id" action={deleteAction} />
       </Route>
     )
   );

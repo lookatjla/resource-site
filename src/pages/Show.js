@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Form } from "react-router-dom";
 
 const Show = (props) => {
   const post = useLoaderData();
@@ -6,8 +6,20 @@ const Show = (props) => {
   return (
     <div className="show" action={`posts/${post.id}`} method="post">
       <img src={post.image} alt={post.title}/>
-      <h2>{post.title}</h2>
+      <h3>{post.title}</h3>
       <p>{post.body}</p>
+
+      <h3>Update {post.title}</h3>
+      <Form action={`/update/${post._id}`} method="post">
+        <input type="input" name="image" placeholder="Food Image" />
+        <input type="input" name="title" placeholder="Restaurant Name" />
+        <input type="input" name="body" placeholder="Your Review" />
+        <input type="submit" value={"Update"} />
+      </Form>
+
+      <Form action={`/delete/${post._id}`} method="post">
+        <input type="submit" value={"Delete"} />
+      </Form>
     </div>
     )
   }
